@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/m-dwyer/TrainerZwift.svg?branch=master)](https://travis-ci.org/m-dwyer/TrainerZwift)
+
 # TrainerZwift
 Quick and dirty window docking for Zwift and TrainerRoad
 
