@@ -2,3 +2,21 @@ language: csharp
 solution: TrainerZwift.sln
 mono:
   - latest
+
+branches:
+  # expected format: v1.0.0
+  only:
+  - /^v\d+(\.\d+)+$/
+  
+before_deploy:
+- cd TrainerZwift/bin/Release
+- zip -r ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.zip *
+
+deploy:
+  - provider: releases
+    api_key:
+        secure: ${GITHUB_API_KEY}
+    file: ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.zip
+    skip_cleanup: true
+    on:
+      tags: true
