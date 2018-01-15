@@ -28,7 +28,7 @@ namespace TrainerZwift
                 IntPtr zwiftProcessHandle = zwiftProcess.MainWindowHandle;
 
                 Win32.RemoveBorder(zwiftProcessHandle);
-                Win32.MoveWindow(zwiftProcessHandle, 0, 0, screenRect.Width, (int)(screenRect.Height * 0.80));
+                Win32.MoveWindow(zwiftProcessHandle, 0, 0, screenRect.Width, (int)(screenRect.Height * 0.83));
             }
             
             // We can launch TrainerRoad if it hasn't been already
